@@ -1,0 +1,65 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 400,
+    "data": {
+      "url": "https://raw.githubusercontent.com/FawwazRosyadie/FIT3179/refs/heads/main/mys_admbnd%20(1).json",
+      "format": {
+        "type": "topojson",
+        "feature": "regions"
+      }
+      
+    },
+    "transform": [
+      {
+        "lookup": "properties.name",
+        "from": {
+          "data": {
+            "values": [
+              {"name": "Johor", "area": 334502},
+              {"name": "Kedah", "area": 341976},
+              {"name": "Kelantan", "area": 629881},
+              {"name": "Melaka", "area": 5199},
+              {"name": "Negeri Sembilan", "area": 155143},
+              {"name": "Pahang", "area": 1588298},
+              {"name": "Perak", "area": 986848},
+              {"name": "Perlis", "area": 10629},
+              {"name": "Pulau Pinang", "area": 5387},
+              {"name": "Sabah", "area": 3574468},
+              {"name": "Sarawak", "area": 3964880},
+              {"name": "Selangor", "area": 250208},
+              {"name": "Terengganu", "area": 540309},
+              {"name": "W.P.Kuala Lumpur", "area": 68},
+              {"name": "W.P.Labuan", "area": 0},
+              {"name": "W.P.Putrajaya", "area": 0}
+            ]
+          },
+          "key": "name",
+          "fields": ["area"]
+        }
+      }
+    ],
+    "projection": {
+      "type": "mercator"
+    },
+    "mark": {
+      "type": "geoshape"
+    },
+    "encoding": {
+      "color": {
+        "field": "area",
+        "type": "quantitative",
+        "scale": {
+          "scheme": "greens"
+        },
+        "legend": {
+          "title": "Area"
+        }
+      },
+      "tooltip": [
+        {"field": "properties.name", "type": "nominal", "title": "Region"},
+        {"field": "area", "type": "quantitative", "title": "Area"}
+      ]
+    }
+  }
+  
