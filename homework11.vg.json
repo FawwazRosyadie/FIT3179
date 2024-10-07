@@ -4,10 +4,22 @@
     "data":{"url": "https://raw.githubusercontent.com/FawwazRosyadie/FIT3179/refs/heads/main/timber_products.csv"},
     "mark": "bar",
     "encoding":{
-        "x":{"field":"date", "type": "ordinal", "title":"Date(per January 1st every year)"},
-        "y":{"field":"production", "type": "quantitative", "title":"Total Timber Production"},
-        "color":{"field":"production", "type": "nominal"}
-    }
+        "x":{"field":"state", "type": "nominal", "title":"State"},
+        "y":{"field":"production", "type": "quantitative", "title":"Total Wood Log Production Over 21 years"},
+        "color":{"field":"product", "type": "nominal", "title":"Timber Products"},
+        "tooltip":[
+            {"field":"State", "type": "nominal"},
+            {"field":"Production", "type": "quantitative", "format":","},
+            {"field":"Date", "type": "ordinal", "format":","}
+        ]
+    },
+    "params": [
+        {
+            "name": "state_highlight",
+            "select":{"type": "point","fields": ["state"]},
+            "bind":"legend"
+        }
+    ]
     
 }
     
