@@ -9,7 +9,6 @@
         "color":{"field":"product", "type": "nominal", "title":"Timber Products"},
         "tooltip":[
             {"field":"State", "type": "nominal"},
-            {"field":"Production", "type": "quantitative", "format":","},
             {"field":"Date", "type": "ordinal", "format":","}
         ]
     },
@@ -20,6 +19,5 @@
             "bind":"legend"
         }
     ]
-    
 }
     
