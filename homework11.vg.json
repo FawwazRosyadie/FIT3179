@@ -1,0 +1,13 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": { "text": "Malaysia Timber Production" },
+    "data":{"url": "https://raw.githubusercontent.com/FawwazRosyadie/FIT3179/refs/heads/main/timber_products.csv"},
+    "mark": "bar",
+    "encoding":{
+        "x":{"field":"date", "type": "ordinal", "title":"Date(per January 1st every year)"},
+        "y":{"field":"production", "type": "quantitative", "title":"Total Timber Production"},
+        "color":{"field":"production", "type": "nominal"}
+    }
+    
+}
+    
