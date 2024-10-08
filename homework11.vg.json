@@ -2,22 +2,24 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": { "text": "Malaysia Timber Production" },
     "data":{"url": "https://raw.githubusercontent.com/FawwazRosyadie/FIT3179/refs/heads/main/timber_products.csv"},
-    "mark": "bar",
-    "encoding":{
-        "x":{"field":"state", "type": "nominal", "title":"State"},
-        "y":{"field":"production", "type": "quantitative", "title":"Total Wood Log Production Over 21 years"},
-        "color":{"field":"product", "type": "nominal", "title":"Timber Products"},
-        "tooltip":[
-            {"field":"State", "type": "nominal"},
-            {"field":"Date", "type": "ordinal", "format":","}
-        ]
-    },
     "params": [
         {
+            
             "name": "state_highlight",
             "select":{"type": "point","fields": ["state"]},
             "bind":"legend"
         }
-    ]
+    ],
+    "mark": "bar",
+    "encoding":{
+        "x":{"field":"date", "type": "ordinal", "title":"Yearly "},
+        "y":{"field":"production", "type": "quantitative", "title":"Total Wood Log Production Over 21 years"},
+        "color":{"field":"state", "type": "nominal", "title":"Timber Products"},
+        "tooltip":[
+            {"field":"State", "type": "nominal"},
+            {"field":"Production", "type": "quantitative", "format": ",", "title":"Amount of Production"}
+        ]
+    }
+    
 }
     
