@@ -12,7 +12,7 @@
     ],
     "mark": "bar",
     "encoding":{
-        "x":{"field":"date", "type": "ordinal", "title":"Yearly "},
+        "x":{"field":"date", "type": "ordinal", "title":"Year"},
         "y":{"field":"production", "type": "quantitative", "title":"Total Wood Log Production Over 21 years"},
         "color":{"field":"state", "type": "nominal", "title":"Timber Products"},
         "tooltip":[
